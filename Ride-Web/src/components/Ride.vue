@@ -2,8 +2,8 @@
   <div id="ride">
     <h2>Drivers</h2>
     <table>
-        <tr v-for="driver in drivers" >
-      <td>{{ driver }}</td>
+       <tr v-for="driver in drivers" >
+      <td>{{"Username: " + driver.username + " Rating: " + driver.rating}}</td>
   </tr>
       <tr>
     <td>

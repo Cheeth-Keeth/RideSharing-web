@@ -23,7 +23,7 @@ function DriverDto (name) {
     },
     created: function () {
         //Initializing participants from backend
-          AXIOS.get(`/findUsers`)
+          AXIOS.get('/findUsers')
           .then(response => {
             // JSON responses are automatically parsed.
             this.drivers = response.data
@@ -45,7 +45,11 @@ function DriverDto (name) {
               //console.log(response.status)
               //console.log(response.config)
               //console.log(response.)
-              this.drivers.push(response.data)
+              var i
+              for (i = 0; i < response.data.length; i++) {
+                this.drivers.push(response.data[i])
+              } 
+              console.log(this.drivers)
               this.newDriver = ''
               this.errorDriver = ''
             })
@@ -57,4 +61,3 @@ function DriverDto (name) {
           }
       }
   }
-  
