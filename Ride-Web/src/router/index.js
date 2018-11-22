@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
-import Ride from '@/components/Ride.vue'
-
+import DriverRating from '@/components/DriverRating.vue'
+import HomePage from '@/components/HomePage.vue'
+import RankingOptions from '@/components/RankingOptions.vue'
 
 Vue.use(Router)
 
@@ -14,9 +15,19 @@ export default new Router({
       component: Hello
     },
     {
-      path: '/app',
-      name: 'Ride',
-      component: Ride
+      path: '/driverRating',
+      name: 'DriverRating',
+      component: DriverRating
+    },
+    {
+      path: '/homePage',
+      name: 'HomePage',
+      component: HomePage
+    },
+    {
+      path: '/rankingOptions',
+      name: 'RankingOptions',
+      component: RankingOptions
     }
   ]
 })
