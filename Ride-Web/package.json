@@ -1,8 +1,8 @@
 {
-  "name": "ridesharing-web",
+  "name": "ride-web",
   "version": "1.0.0",
-  "description": "A Vue.js web frontend for Ride Sharing App",
-  "author": "Team 03",
+  "description": "A Vue.js web frontend for Ride App",
+  "author": "Team 3",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",

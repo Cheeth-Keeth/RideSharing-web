@@ -1,6 +1,6 @@
-# ridesharing-web
+# ride-web
 
-> A Vue.js web frontend for Ride Sharing App
+> A Vue.js web frontend for Ride App
 
 ## Build Setup
 

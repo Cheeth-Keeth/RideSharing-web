@@ -1,16 +1,16 @@
 <template>
-  <div id="ridesharing">
+  <div id="ride">
     <h2>Drivers</h2>
     <table>
-    <tr v-for="driver in drivers" >
-      <td>{{driver}}</td>
+        <tr v-for="driver in drivers" >
+      <td>{{ driver }}</td>
   </tr>
       <tr>
     <td>
         <input type="text" v-model="newDriver" placeholder="Driver Name">
     </td>
     <td>
-        <button @click="createDriver(newDriver)">Create Driver</button>
+        <button @click="createDriver(newDriver)">Get Drivers</button>
     </td>
   </tr>
     </table>
@@ -20,12 +20,11 @@
   </div>
 </template>
 
-<script src="./ridesharing.js">
+<script src="./ride.js">
 </script>
 
-
 <style>
- #ridesharing {
+  #ride {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     color: #2c3e50;
     background: #f2ece8;

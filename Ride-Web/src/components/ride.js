@@ -8,12 +8,11 @@ var AXIOS = axios.create({
   baseURL: backendUrl,
   headers: { 'Access-Control-Allow-Origin': frontendUrl }
 })
-
 function DriverDto (name) {
     this.name = name
   }
   export default {
-    name: 'ridesharing',
+    name: 'ride',
     data () {
       return {
         drivers: [],
@@ -23,7 +22,7 @@ function DriverDto (name) {
       }
     },
     created: function () {
-        // Initializing participants from backend
+        //Initializing participants from backend
           AXIOS.get(`/findUsers`)
           .then(response => {
             // JSON responses are automatically parsed.
@@ -35,18 +34,18 @@ function DriverDto (name) {
       },
       methods: {
         createDriver: function (driverName) {
-            AXIOS.get(`/findUsers/`+driverName+"/Driver")
+            AXIOS.get(`/findUsers/`+driverName+'/Driver',{},{})
             .then(response => {
               // JSON responses are automatically parsed.
+              //console.log(response.data.driverName)
               console.log(driverName)
-
-              
-
-
-
+              //console.log(response.data)
+              console.log(response.data.length)
+              //console.log(response.length)
+              //console.log(response.status)
+              //console.log(response.config)
+              //console.log(response.)
               this.drivers.push(response.data)
-              console.log(this.drivers.name)
-              console.log(this.drivers)
               this.newDriver = ''
               this.errorDriver = ''
             })
@@ -58,3 +57,4 @@ function DriverDto (name) {
           }
       }
   }
+  
