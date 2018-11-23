@@ -1,6 +1,6 @@
 <template>
   <div id="ride">
-    <h2>Drivers</h2>
+    <h1>Drivers</h1>
     <center>
       <center>
       <tr>
@@ -12,15 +12,20 @@
     </td>
   </tr>
       </center>
-    <table>
+      <p>
+
+
+
+      </p>
+    <table id="border">
       <center>
         <tr>
-          <th>Username</th>
-          <th>Ranking</th>
+          <th id="border">Username</th>
+          <th id="border">Ranking</th>
         </tr>
        <tr v-for="driver in drivers" >
-        <td>{{driver.username}}</td>
-        <td>{{driver.rating}}</td>
+        <td id="border">{{driver.username}}</td>
+        <td id="border">{{driver.rating}}</td>
       </tr>
       </center>
     </table>
@@ -37,10 +42,11 @@
 <style>
   #ride {  
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    color: #60b0f4;
-    background: #f2ece8;
+    color: #ffffff;
+    background: #60b0f4;
+    font-size: 0.6cm;
   }
-    table, td, th{
-    border: 1px solid black;
-}
+  #border{
+    border: 0.1px solid white;
+  }
 </style>
