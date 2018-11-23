@@ -8,16 +8,16 @@ var AXIOS = axios.create({
   baseURL: backendUrl,
   headers: { 'Access-Control-Allow-Origin': frontendUrl }
 })
-function DriverDto (name) {
+function PassengerDto (name) {
     this.name = name
   }
   export default {
     name: 'ride',
     data () {
       return {
-        drivers: [],
-        newDriver: '',
-        errorDriver: '',
+        passengers: [],
+        newPassenger: '',
+        errorPassenger: '',
         response: []
       }
     },
@@ -27,46 +27,46 @@ function DriverDto (name) {
           .then(response => {
             // JSON responses are automatically parsed.
             //console.log(response.data)
-            this.drivers = response.data
+            this.passengers = response.data
           })
           .catch(e => {
-            this.errorRoute = e;
+            this.errorPassenger = e;
           });
       },
       methods: {
-        getDrivers: function (driverName) {
-            if(driverName==null){
-                AXIOS.get(`/findActiveUsers/`+'!ALL!'+'/'+'Driver',{},{})
+        getPassengers: function (passengerName) {
+            if(passengerName==null){
+                AXIOS.get(`/findActiveUsers/`+'!ALL!'+'/'+'Passenger',{},{})
             .then(response => {
               // JSON responses are automatically parsed.
               console.log(response.data.length)
-              this.drivers=response.data
-              console.log(this.drivers)
+              this.passengers=response.data
+              console.log(this.passengers)
               var i
-              this.newDriver = ''
-              this.errorDriver = ''
+              this.newPassenger = ''
+              this.errorPassenger = ''
             })
             .catch(e => {
               var errorMsg = e.message
               console.log(errorMsg)
-              this.errorDriver = errorMsg
+              this.errorPassenger = errorMsg
             });
             }
             else{
-                AXIOS.get(`/findActiveUsers/`+driverName+'/'+'Driver',{},{})
+                AXIOS.get(`/findActiveUsers/`+passengerName+'/'+'Passenger',{},{})
                 .then(response => {
                     // JSON responses are automatically parsed.
                     console.log(response.data.length)
-                    this.drivers=response.data
-                    console.log(this.drivers)
+                    this.passengers=response.data
+                    console.log(this.passengers)
                     var i
-                    this.newDriver = ''
-                    this.errorDriver = ''
+                    this.newPassenger = ''
+                    this.errorPassenger = ''
                   })
                   .catch(e => {
                     var errorMsg = e.message
                     console.log(errorMsg)
-                    this.errorDriver = errorMsg
+                    this.errorPassenger = errorMsg
                   });
             }
             
