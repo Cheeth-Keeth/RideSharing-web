@@ -1,6 +1,6 @@
 <template>
   <div id="ride">
-    <h1>Popular Routes</h1>
+    <h1>Most Popular Routes</h1>
     <center>
       <center>
       <tr>
