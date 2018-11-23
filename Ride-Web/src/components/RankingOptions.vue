@@ -11,7 +11,7 @@
                     <a href="http://localhost:8087/#/passengerRating"><button>Passenger Rankings</button></a>
                 </td>
                 <td>
-                    <a href="http://localhost:8087/#/driverRating"><button>Route Popularity</button></a>
+                    <a href="http://localhost:8087/#/mostPopularRoute"><button>Route Popularity</button></a>
                 </td>
             </tr>
         </table>

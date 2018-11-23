@@ -5,6 +5,8 @@ import DriverRating from '@/components/DriverRating.vue'
 import HomePage from '@/components/HomePage.vue'
 import RankingOptions from '@/components/RankingOptions.vue'
 import PassengerRating from '@/components/PassengerRating.vue'
+import MostPopularRoute from '@/components/MostPopularRoute.vue'
+
 
 Vue.use(Router)
 
@@ -34,6 +36,12 @@ export default new Router({
       path: '/rankingOptions',
       name: 'RankingOptions',
       component: RankingOptions
+    }
+    ,
+    {
+      path: '/mostPopularRoute',
+      name: 'MostPopularRoute',
+      component: MostPopularRoute
     }
   ]
 })

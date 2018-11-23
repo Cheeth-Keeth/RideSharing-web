@@ -1,6 +1,6 @@
 <template>
   <div id="ride">
-    <h1>Drivers</h1>
+    <h1>Popular Routes</h1>
     <center>
       <center>
       <tr>
@@ -11,7 +11,7 @@
         <input type="text" v-model="endDate" placeholder="DD-MM-YYYY">
     </td>
     <td>
-        <button @click="createDriver(startDate,endDate)">Get Drivers</button>
+        <button @click="getRoutes(startDate,endDate)">Get Routes</button>
     </td>
   </tr>
       </center>
@@ -23,12 +23,12 @@
     <table id="border">
       <center>
         <tr>
-          <th id="border">Username</th>
-          <th id="border">Rating</th>
+          <th id="border">Start City</th>
+          <th id="border">End City</th>
         </tr>
-       <tr v-for="driver in drivers" >
-        <td id="border">{{driver.username}}</td>
-        <td id="border">{{driver.rating}}</td>
+       <tr v-for="route in routes" >
+        <td id="border">{{route.startCity}}</td>
+        <td id="border">{{route.endCity}}</td>
       </tr>
       </center>
     </table>
@@ -39,7 +39,7 @@
   </div>
 </template>
 
-<script src="./driverRating.js">
+<script src="./mostPopularRoute.js">
 </script>
 
 <style>

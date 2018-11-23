@@ -5,10 +5,13 @@
       <center>
       <tr>
     <td>
-        <input type="text" v-model="newPassenger" placeholder="Passenger Name">
+        <input type="text" v-model="startDate" placeholder="DD-MM-YYYY">
     </td>
     <td>
-        <button @click="createPassenger(newPassenger)">Get Passengers</button>
+        <input type="text" v-model="endDate" placeholder="DD-MM-YYYY">
+    </td>
+    <td>
+        <button @click="createPassenger(startDate,endDate)">Get Passengers</button>
     </td>
   </tr>
       </center>
@@ -21,11 +24,13 @@
       <center>
         <tr>
           <th id="border">Username</th>
-          <th id="border">Ranking</th>
+          <th id="border">Rating</th>
+          <th id="border">Trips Completed</th>
         </tr>
        <tr v-for="passenger in passengers" >
         <td id="border">{{passenger.username}}</td>
         <td id="border">{{passenger.rating}}</td>
+        <td id="border">{{passenger.ridesTravelled}}</td>
       </tr>
       </center>
     </table>

@@ -8,48 +8,35 @@ var AXIOS = axios.create({
   baseURL: backendUrl,
   headers: { 'Access-Control-Allow-Origin': frontendUrl }
 })
-function PassengerDto (name) {
+function RouteDto (name) {
     this.name = name
   }
   export default {
     name: 'ride',
     data () {
       return {
-        passengers: [],
-        newPassenger: '',
-        errorPassenger: '',
+        routes: [],
+        newRoute: '',
+        errorRoute: '',
         response: []
       }
     },
-    // data () {
-    //   return {
-    //     startDate: '',
-    //     errorStartDate: '',
-    //     response: []
-    //   }
-    // },
-    // data () {
-    //   return {
-    //     endDate: '',
-    //     errorEndDate: '',
-    //     response: []
-    //   }
-    // },
+
     created: function () {
         //Initializing participants from backend
-          AXIOS.get('/mostLoyal')
+          AXIOS.get('/mostPopularRoutes')
           .then(response => {
             // JSON responses are automatically parsed.
             //console.log(response.data)
-            this.passengers = response.data
+            this.routes = response.data
           })
           .catch(e => {
-            this.errorPassenger = e;
+            this.errorRoute = e;
           });
       },
       methods: {
-        createPassenger: function (startDateName, endDateName) {
-            AXIOS.get(`/mostLoyal/`+startDateName+'/'+endDateName+'/Driver',{},{})
+        getRoutes: function (startDateName, endDateName) {
+            AXIOS.get(`/mostPopularRoutes/`+startDateName+'/'+endDateName,{},{})
             .then(response => {
               // JSON responses are automatically parsed.
               //console.log(response.data.passengerName)
@@ -62,9 +49,9 @@ function PassengerDto (name) {
               //console.log(response.config)
               //console.log(response.)
               //console.log(this.passengers)
-              this.passengers=response.data
+              this.routes=response.data
               // console.log(this.passengers)
-              console.log(this.passengers)
+              console.log(this.routes)
               var i
               // console.log('matt')
               // console.log(response.data)
@@ -75,13 +62,13 @@ function PassengerDto (name) {
                 //console.log(response.data[i])
               //} 
               //console.log(this.passengers)
-              this.newPassenger = ''
-              this.errorPassenger = ''
+              this.newRoute = ''
+              this.errorRoute = ''
             })
             .catch(e => {
               var errorMsg = e.message
               console.log(errorMsg)
-              this.errorPassenger = errorMsg
+              this.errorRoute = errorMsg
             });
           }
       }
