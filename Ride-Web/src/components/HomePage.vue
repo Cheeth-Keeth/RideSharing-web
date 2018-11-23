@@ -8,7 +8,7 @@
                     <a href="http://localhost:8087/#/rankingOptions"><button>Rankings</button></a>
                 </td>
                 <td>
-                    <button>Active Statuses</button>
+                    <a href="http://localhost:8087/#/statusOptions"><button>Status</button></a>
                 </td>
             </tr>
         </table>

@@ -6,14 +6,17 @@ import HomePage from '@/components/HomePage.vue'
 import RankingOptions from '@/components/RankingOptions.vue'
 import PassengerRating from '@/components/PassengerRating.vue'
 import MostPopularRoute from '@/components/MostPopularRoute.vue'
-
+import RouteStatus from '@/components/RouteStatus.vue'
+import DriverStatus from '@/components/DriverStatus.vue'
+import PassengerStatus from '@/components/PassengerStatus.vue'
+import StatusOptions from '@/components/StatusOptions.vue'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/hhh',
       name: 'Hello',
       component: Hello
     },
@@ -28,7 +31,7 @@ export default new Router({
       component: PassengerRating
     },
     {
-      path: '/homePage',
+      path: '/',
       name: 'HomePage',
       component: HomePage
     },
@@ -36,12 +39,32 @@ export default new Router({
       path: '/rankingOptions',
       name: 'RankingOptions',
       component: RankingOptions
-    }
-    ,
+    },
     {
       path: '/mostPopularRoute',
       name: 'MostPopularRoute',
       component: MostPopularRoute
-    }
+    },
+    ,
+    {
+      path: '/driverStatus',
+      name: 'DriverStatus',
+      component: DriverStatus
+    },
+    {
+      path: '/passengerStatus',
+      name: 'PassengerStatus',
+      component: PassengerStatus
+    },
+    {
+      path: '/routeStatus',
+      name: 'RouteStatus',
+      component: RouteStatus
+    },
+    {
+      path: '/statusOptions',
+      name: 'StatusOptions',
+      component: StatusOptions
+    },
   ]
 })

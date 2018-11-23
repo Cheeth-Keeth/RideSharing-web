@@ -33,9 +33,6 @@
       </center>
     </table>
     </center>
-    <p>
-      <span style="color:red">Error: Message text comes here</span>
-    </p>
   </div>
 </template>
 

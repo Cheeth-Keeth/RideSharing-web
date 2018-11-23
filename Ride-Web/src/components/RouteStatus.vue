@@ -1,17 +1,17 @@
 <template>
   <div id="ride">
-    <h1>Popular Routes</h1>
+    <h1>Active Routes</h1>
     <center>
       <center>
       <tr>
     <td>
-        <input type="text" v-model="startDate" placeholder="DD-MM-YYYY">
+        <input type="text" v-model="startCity" placeholder="Start City">
     </td>
     <td>
-        <input type="text" v-model="endDate" placeholder="DD-MM-YYYY">
+        <input type="text" v-model="endCity" placeholder="End City">
     </td>
     <td>
-        <button @click="getRoutes(startDate,endDate)">Get Routes</button>
+        <button @click="getRoutes(startCity,endCity)">Get Routes</button>
     </td>
   </tr>
       </center>
@@ -25,10 +25,12 @@
         <tr>
           <th id="border">Start City</th>
           <th id="border">End City</th>
+          <th id="border">Date</th>
         </tr>
        <tr v-for="route in routes" >
         <td id="border">{{route.startCity}}</td>
         <td id="border">{{route.endCity}}</td>
+        <td id="border">{{route.date}}</td>
       </tr>
       </center>
     </table>
@@ -36,7 +38,7 @@
   </div>
 </template>
 
-<script src="./mostPopularRoute.js">
+<script src="./routeStatus.js">
 </script>
 
 <style>
